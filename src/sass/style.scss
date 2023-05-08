@@ -1,5 +1,132 @@
 @use "./reset";
 
-h1 {
-  color: red;
+$c-STAY_FREE_BLUE: #0175c2;
+$c-STAY_FREE_BLUE-rgba: rgba(1, 117, 194, 0.24);
+$c-WHITE: #fff;
+
+$fw-REGULAR: 400;
+$fw-MEDIUM: 500;
+$fw-BOLD: 700;
+$fw-BLACK: 900;
+
+html {
+  font-size: 62.5%;
+  line-height: 1;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-weight: $fw-REGULAR;
+  height: 100%;
+}
+
+body {
+  background: url("../img/bg-noise.jpg") repeat top left/360px auto;
+  padding: 8px;
+  height: 100%;
+
+  &::before {
+    content: "";
+    display: block;
+    border: solid 6px $c-STAY_FREE_BLUE;
+    position: fixed;
+    inset: 0;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    border-right: solid 90px $c-STAY_FREE_BLUE;
+    border-bottom: solid 90px transparent;
+    width: 90px;
+    height: 90px;
+    position: fixed;
+    top: 6px;
+    right: 6px;
+  }
+}
+
+.header {
+  padding: 8px;
+  position: absolute;
+  inset: 8px 8px auto 8px;
+
+  &__heading {
+    font-size: 10px;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  &__logo {
+    width: 216px;
+  }
+}
+
+.hero {
+  height: 100%;
+  position: relative;
+
+  &__scroll {
+    background-color: $c-STAY_FREE_BLUE-rgba;
+    width: 92px;
+    height: 92px;
+    clip-path: polygon(0 0, 100% 100%, 0 100%);
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+
+    &::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: $c-WHITE;
+      position: absolute;
+      bottom: 8px;
+      left: 5px;
+
+      animation: circlemove 1.6s ease-in-out infinite,
+        cirlemovehide 1.6s ease-in-out infinite;
+
+      @keyframes circlemove {
+        0% {
+          bottom: 48px;
+        }
+        100% {
+          bottom: 8px;
+        }
+      }
+
+      @keyframes cirlemovehide {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        80% {
+          opacity: 0.9;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+    }
+
+    &::after {
+      content: "";
+      background: $c-WHITE;
+      width: 1px;
+      height: 48px;
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+    }
+  }
+
+  &__scrollText {
+    font-size: 12px;
+    font-weight: $fw-MEDIUM;
+    color: $c-WHITE;
+    position: absolute;
+    bottom: 8px;
+    left: 24px;
+  }
 }
