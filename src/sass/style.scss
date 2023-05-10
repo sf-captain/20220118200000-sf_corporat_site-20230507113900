@@ -82,9 +82,10 @@ body {
     line-height: 1.2;
     color: $c-STAY_FREE_BLUE;
     position: absolute;
-    top: cPxToStdVp(400);
+    // top: cPxToStdVp(384);
     // bottom: cPxToStdVp(56);
-    left: 16px;
+    top: 60%;
+    left: cPxToStdVp(16);
   }
 
   &__mv {
