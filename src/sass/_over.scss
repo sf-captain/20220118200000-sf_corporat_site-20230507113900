@@ -1,0 +1,24 @@
+@use "./consts" as c;
+@use "./functions" as f;
+@use "./mixins" as m;
+
+.over {
+  font-size: f.cPxToStdVp(24);
+  font-weight: c.$fw-BLACK;
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+  text-align: center;
+
+  @include m.mq(PC) {
+    font-size: f.cPxToStdVp(32, 1024);
+    letter-spacing: 0.02em;
+  }
+
+  span {
+    display: inline-block;
+
+    @include m.mq(PC) {
+      display: unset;
+    }
+  }
+}

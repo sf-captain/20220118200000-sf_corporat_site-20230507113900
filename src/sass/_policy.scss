@@ -1,0 +1,121 @@
+@use "./consts" as c;
+@use "./functions" as f;
+@use "./mixins" as m;
+
+.policy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: f.cPxToStdVp(992);
+  position: relative;
+
+  @include m.mq(PC) {
+    height: f.cPxToStdVp(992, 1024);
+  }
+
+  &::before {
+    content: "Policy";
+    font-size: f.cPxToStdVp(120);
+    font-weight: c.$fw-BLACK;
+    letter-spacing: 0.02em;
+    color: rgba(1, 117, 194, 0.16);
+    position: absolute;
+    inset: 50% auto auto 50%;
+    translate: -50% -50%;
+
+    @include m.mq(PC) {
+      font-size: f.cPxToStdVp(200, 1024);
+    }
+  }
+
+  &__text {
+    font-size: f.cPxToStdVp(48);
+    font-weight: c.$fw-BLACK;
+    writing-mode: vertical-rl;
+
+    @include m.mq(PC) {
+      font-size: f.cPxToStdVp(48, 1024);
+    }
+  }
+
+  &__line {
+    margin: auto;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    width: calc(f.cPxToStdVp(184) + 6px + 6px);
+    height: calc(f.cPxToStdVp(536) + 6px + 6px);
+
+    path {
+      fill: transparent;
+      stroke: #ffeb00;
+      stroke-width: 12px;
+      opacity: 0.32;
+    }
+
+    @include m.mq(PC) {
+      width: calc(f.cPxToStdVp(184, 1024) + 6px + 6px);
+      height: calc(f.cPxToStdVp(536, 1024) + 6px + 6px);
+    }
+  }
+
+  &__bgShape {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+
+    &::before {
+      content: "";
+      display: block;
+      background-color: black;
+      clip-path: polygon(
+        f.cPxToStdVp(52) f.cPxToStdVp(64),
+        f.cPxToStdVp(248) f.cPxToStdVp(148),
+        f.cPxToStdVp(324) f.cPxToStdVp(912),
+        f.cPxToStdVp(64) f.cPxToStdVp(832)
+      );
+      opacity: 0.04;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      inset: 0;
+
+      @include m.mq(PC) {
+        clip-path: polygon(
+          f.cPxToStdVp(258, 1024) f.cPxToStdVp(64, 1024),
+          f.cPxToStdVp(576, 1024) f.cPxToStdVp(144, 1024),
+          f.cPxToStdVp(810, 1024) f.cPxToStdVp(912, 1024),
+          f.cPxToStdVp(326, 1024) f.cPxToStdVp(832, 1024)
+        );
+      }
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      background-color: black;
+      clip-path: polygon(
+        f.cPxToStdVp(88) f.cPxToStdVp(164),
+        f.cPxToStdVp(268) 0,
+        f.cPxToStdVp(332) f.cPxToStdVp(776),
+        f.cPxToStdVp(4) f.cPxToStdVp(992)
+      );
+      opacity: 0.04;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      inset: 0;
+
+      @include m.mq(PC) {
+        clip-path: polygon(
+          f.cPxToStdVp(390, 1024) f.cPxToStdVp(164, 1024),
+          f.cPxToStdVp(686, 1024) 0,
+          f.cPxToStdVp(683, 1024) f.cPxToStdVp(776, 1024),
+          f.cPxToStdVp(214, 1024) f.cPxToStdVp(992, 1024)
+        );
+      }
+    }
+  }
+}
