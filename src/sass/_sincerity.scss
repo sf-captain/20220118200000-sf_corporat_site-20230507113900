@@ -64,7 +64,7 @@
   &__textBox {
     position: absolute;
     top: 0;
-    right: 0;
+    left: f.cPxToStdVp(200);
 
     @include m.mq(PC) {
       flex-grow: 1;
