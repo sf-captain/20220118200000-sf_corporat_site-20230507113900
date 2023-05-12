@@ -65,6 +65,7 @@
     position: absolute;
     top: 0;
     left: f.cPxToStdVp(200);
+    overflow: hidden;
 
     @include m.mq(PC) {
       flex-grow: 1;
