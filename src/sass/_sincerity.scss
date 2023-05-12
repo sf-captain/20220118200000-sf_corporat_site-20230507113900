@@ -3,7 +3,7 @@
 @use "./mixins" as m;
 
 .sincerity {
-  position: relative;
+  display: flex;
 
   @include m.mq(PC) {
     display: flex;
@@ -62,10 +62,9 @@
   }
 
   &__textBox {
-    position: absolute;
-    top: 0;
-    left: f.cPxToStdVp(200);
-    overflow: hidden;
+    // position: absolute;
+    // top: 0;
+    // left: f.cPxToStdVp(200);
 
     @include m.mq(PC) {
       flex-grow: 1;
