@@ -1,0 +1,38 @@
+@use "../consts" as c;
+@use "../functions" as f;
+@use "../mixins" as m;
+
+.subPageHeading {
+  text-align: center;
+  margin-bottom: f.cPxToStdVp(104);
+
+  &::before {
+    display: block;
+    content: "SERVICE";
+    font-size: f.cPxToStdVp(64);
+    font-weight: c.$FW-BLACK;
+    letter-spacing: 0.02em;
+    color: c.$c-STAY_FREE_BLUE;
+    margin-bottom: f.cPxToStdVp(8);
+  }
+
+  span {
+    font-size: f.cPxToStdVp(20);
+    font-weight: c.$FW-BOLD;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: c.$c-STAY_FREE_BLUE;
+
+    &::before {
+      content: "-";
+      letter-spacing: 0.02em;
+      margin-right: 0.2em;
+    }
+
+    &::after {
+      content: "-";
+      letter-spacing: 0.02em;
+      margin-left: 0.2em;
+    }
+  }
+}

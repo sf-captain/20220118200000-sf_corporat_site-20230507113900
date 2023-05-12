@@ -1,7 +1,7 @@
 @use "./consts" as c;
 
 @mixin mq($bp) {
-  @media #{map-get(c.$BREAKPOINTS, $bp)} {
+  @media #{map-get(c.$MEDIA_QUERIES, $bp)} {
     @content;
   }
 }

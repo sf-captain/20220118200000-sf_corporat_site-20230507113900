@@ -1,0 +1,14 @@
+@use "./consts" as c;
+@use "./functions" as f;
+@use "./mixins" as m;
+
+.addedValue {
+  font-size: f.cPxToStdVp(96);
+  font-weight: c.$FW-BLACK;
+  text-align: center;
+  color: c.$C-STAY_FREE_BLUE-rgba;
+
+  @include m.mq(PC) {
+    font-size: f.cPxToStdVp(160, map-get(c.$BREAKPOINTS, "PC"));
+  }
+}

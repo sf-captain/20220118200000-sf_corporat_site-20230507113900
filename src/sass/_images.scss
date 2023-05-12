@@ -1,0 +1,39 @@
+@use "./consts" as c;
+@use "./functions" as f;
+@use "./mixins" as m;
+
+.images {
+  @include m.mq(PC) {
+    padding: 0 f.cPxToStdVp(40, map-get(c.$BREAKPOINTS, "PC"));
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    background: url("../img/mv.jpg") no-repeat center/cover;
+    width: f.cPxToStdVp(296);
+    height: f.cPxToStdVp(208);
+    margin-left: auto;
+
+    @include m.mq(PC) {
+      width: f.cPxToStdVp(464, map-get(c.$BREAKPOINTS, "PC"));
+      height: f.cPxToStdVp(326, map-get(c.$BREAKPOINTS, "PC"));
+    }
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    background: url("../img/mv.jpg") no-repeat center/cover;
+    width: f.cPxToStdVp(200);
+    height: f.cPxToStdVp(200);
+    margin: f.cPxToStdVp(-40) 0 0 f.cPxToStdVp(16);
+
+    @include m.mq(PC) {
+      width: f.cPxToStdVp(308, map-get(c.$BREAKPOINTS, "PC"));
+      height: f.cPxToStdVp(308, map-get(c.$BREAKPOINTS, "PC"));
+      margin: f.cPxToStdVp(-40) 0 0
+        f.cPxToStdVp(224, map-get(c.$BREAKPOINTS, "PC"));
+    }
+  }
+}

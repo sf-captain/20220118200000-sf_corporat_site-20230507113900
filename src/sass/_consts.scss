@@ -1,8 +1,29 @@
-$BREAKPOINTS: (
-  SP: "screen and (max-width: 767px)",
-  TAB: "screen and (min-width: 768px)",
-  PC: "screen and (min-width: 1024px)",
+$STD_VPS: (
+  SP: 360,
+  PC: 1024,
 );
+
+$BREAKPOINTS: (
+  TAB: 768,
+  PC: 1024,
+);
+
+$MEDIA_QUERIES: (
+  TAB: "screen and (min-width: #{map-get($BREAKPOINTS, "TAB")}px)",
+  PC: "screen and (min-width: #{map-get($BREAKPOINTS, "PC")}px)",
+);
+
+$C-STAY_FREE_BLUE: #0175c2;
+$C-STAY_FREE_BLUE-rgba: rgba(1, 117, 194, 0.24);
+
+$FW-REGULAR: 400;
+$FW-MEDIUM: 500;
+$FW-BOLD: 700;
+$FW-BLACK: 900;
+
+$FC-BLACK: #222;
+
+//
 
 $c-STAY_FREE_BLUE: #0175c2;
 $c-STAY_FREE_BLUE-rgba: rgba(1, 117, 194, 0.24);
