@@ -65,6 +65,7 @@
     // position: absolute;
     // top: 0;
     // left: f.cPxToStdVp(200);
+    height: 100%;
 
     @include m.mq(PC) {
       flex-grow: 1;
@@ -81,6 +82,7 @@
     // white-space: nowrap;
     overflow: hidden;
     margin-top: -1em;
+    // height: 100%;
 
     @include m.mq(PC) {
       font-size: f.cPxToStdVp(64, map-get(c.$BREAKPOINTS, "PC"));
